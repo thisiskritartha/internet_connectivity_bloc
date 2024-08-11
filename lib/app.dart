@@ -1,4 +1,5 @@
 import 'package:bloc_connectivity/logic/internet/bloc/internet_bloc.dart';
+import 'package:bloc_connectivity/logic/settings/bloc/settings_bloc.dart';
 import 'package:bloc_connectivity/presentation/router/app_router.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,9 @@ class App extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => CounterBloc(internetBloc: BlocProvider.of<InternetBloc>(context)),
+        ),
+        BlocProvider(
+          create: (context) => SettingsBloc(),
         ),
       ],
       child: MaterialApp(

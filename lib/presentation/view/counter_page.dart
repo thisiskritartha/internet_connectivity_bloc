@@ -21,6 +21,12 @@ class CounterPage extends StatelessWidget {
           ),
         ),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () => Navigator.pushNamed(context, '/settings'),
+          ),
+        ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
