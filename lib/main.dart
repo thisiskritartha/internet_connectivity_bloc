@@ -1,3 +1,4 @@
+import 'package:bloc_connectivity/logic/utility/app_bloc_observer.dart';
 import 'package:bloc_connectivity/presentation/router/app_router.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   HydratedBloc.storage =
       await HydratedStorage.build(storageDirectory: await getApplicationDocumentsDirectory());
+
+  Bloc.observer = AppBlocObserver();
   return runApp(App(
     appRouter: AppRouter(),
     connectivity: Connectivity(),
